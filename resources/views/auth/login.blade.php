@@ -78,24 +78,4 @@
   </div>
 </div>
 
-<!-- Script para alternar la visibilidad del campo de contraseña -->
-<<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const togglePassword = document.getElementById('togglePassword');
-    const passwordInput = document.getElementById('password');
-
-    togglePassword.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            togglePassword.classList.remove('bi-eye-slash');
-            togglePassword.classList.add('bi-eye');
-        } else {
-            passwordInput.type = 'password';
-            togglePassword.classList.remove('bi-eye');
-            togglePassword.classList.add('bi-eye-slash');
-        }
-    });
-});
-</>
 @endsection
