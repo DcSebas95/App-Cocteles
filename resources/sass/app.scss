@@ -6,3 +6,100 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+body {
+  background-color: #1c1c1c; // fondo oscuro
+  color: #d0d0d0; // texto en gris claro para contraste
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+// Personalización de la barra de navegación (navbar)
+.navbar {
+  background-color: #000; // negro puro
+  border-bottom: 1px solid #333; // separación sutil
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #d0d0d0 !important; // textos en gris claro
+  font-weight: 300;
+}
+
+.btn-primary {
+  background-color: #333;
+  border-color: #444;
+  color: #d0d0d0;
+}
+
+/* Estilos para las tarjetas de cócteles */
+.cocktail-card {
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Efecto de resplandor morado al pasar el cursor */
+.cocktail-card:hover {
+  box-shadow: 0 0 15px 4px rgba(138, 43, 226, 0.8);
+  /* Morado fosforescente */
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+/* Aumentar la separación entre tarjetas */
+.row .col-md-4 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Centrar texto en las tarjetas */
+.card-body {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  /* Aumenta el tamaño */
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  /* Fuente elegante */
+  margin-bottom: 30px;
+  /* Espacio extra debajo */
+}
+
+#cocktailsTable {
+  background-color: #000;
+  /* Fondo negro intenso */
+  color: #fff;
+  /* Letras blancas */
+  border: 2px solid yellow;
+  /* Bordes amarillos */
+
+  th {
+    background-color: #222;
+    /* Un negro más suave para los encabezados */
+    color: yellow;
+    /* Texto amarillo */
+    border-bottom: 2px solid yellow;
+    /* Separador amarillo */
+  }
+
+  td {
+    border: 1px solid yellow;
+    /* Bordes de cada celda */
+  }
+
+  /* Resaltar filas al pasar el mouse */
+  tbody tr:hover {
+    background-color: #333;
+    /* Negro más claro al hacer hover */
+  }
+}
+
+/* Efecto de hover para los botones */
+table .btn:hover {
+  transform: scale(1.1);
+  /* Aumenta el tamaño del botón */
+  transition: transform 0.2s ease-in-out;
+  /* Suaviza la transición */
+}

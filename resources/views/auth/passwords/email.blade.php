@@ -1,47 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="row justify-content-center w-100">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header text-center">{{ __('Restablecer Contraseña') }}</div>
+        <div class="card-body">
+          @if (session('status'))
+            <!-- Mensaje de éxito y botón para regresar al login -->
+            <div class="alert alert-success text-center" role="alert">
+              {{ session('status') }}
+            </div>
+            <div class="text-center mt-3">
+              <a href="{{ route('login') }}" class="btn btn-primary">
+                {{ __('Regresar al Login') }}
+              </a>
+            </div>
+          @else
+            <!-- Formulario para enviar el correo de recuperación -->
+            <form method="POST" action="{{ route('password.email') }}">
+              @csrf
+                <br>
+              <div class="row mb-3 justify-content-center">
+                <div class="col-md-8">
+                  <label for="email" class="text-center d-block">{{ __('Correo') }}</label>
+                  <input id="email" type="email" 
+                         class="form-control mx-auto @error('email') is-invalid @enderror" 
+                         name="email" value="{{ old('email') }}" required autocomplete="email" autofocus 
+                         style="max-width: 300px;">
+                  @error('email')
+                    <span class="invalid-feedback d-block text-center" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
             </div>
-        </div>
+            <br>
+              <div class="row mb-0 justify-content-center">
+                <div class="col-md-8 text-center">
+                  <button type="submit" class="btn btn-primary">
+                    {{ __('Enviar correo de recuperación') }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          @endif
+        </div><!-- card-body -->
+      </div><!-- card -->
     </div>
+  </div>
 </div>
 @endsection

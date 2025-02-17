@@ -20,24 +20,32 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($cocktails as $cocktail)
-                <tr>
-                    <td>{{ $cocktail->id }}</td>
-                    <td>{{ $cocktail->strDrink }}</td>
-                    <td>{{ $cocktail->strCategory }}</td>
-                    <td>{{ $cocktail->strAlcoholic }}</td>
-                    <td>
-                        <!-- Botones para editar y eliminar (implementar según necesidad) -->
-                        <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
+    @foreach($cocktails as $index => $cocktail)
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $cocktail->strDrink }}</td>
+            <td>{{ $cocktail->strCategory }}</td>
+            <td>{{ $cocktail->strAlcoholic }}</td>
+            <td class="d-flex justify-content-start align-items-center">
+                <!-- Botón de Editar con ícono de lápiz -->
+                <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning btn-sm me-2">
+                    <i class="fas fa-pencil-alt"></i> Editar
+                </a>
+                
+                <!-- Botón de Eliminar con ícono de caneca -->
+                <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i> Eliminar
+                    </button>
+                </form>
+            </td>
+        </tr>
+    @endforeach
+</tbody>
+
+
     </table>
 </div>
 <div class="text-center mt-4">

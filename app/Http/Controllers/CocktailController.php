@@ -26,7 +26,7 @@ class CocktailController extends Controller
     // Guardar un cóctel en la base de datos
     public function save(Request $request)
     {
-        // Validar datos (puedes ajustar según los campos enviados)
+        
         $data = $request->validate([
             'strDrink' => 'required|string',
             'strCategory' => 'required|string',
@@ -50,7 +50,7 @@ class CocktailController extends Controller
     $cocktail = Cocktail::findOrFail($id);
     return view('cocktails.edit', compact('cocktail'));
 }
-
+//modificar bebidas
 public function update(Request $request, $id)
 {
     $data = $request->validate([

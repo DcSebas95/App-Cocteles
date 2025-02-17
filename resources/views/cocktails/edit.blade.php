@@ -32,7 +32,7 @@
             <label for="strCategory">Categoría</label>
             <input type="text" name="strCategory" id="strCategory" class="form-control" value="{{ $cocktail->strCategory }}" required>
         </div>
-
+        <!--Lista desplegable-->
         {{-- Campo para el tipo (Alcohólico/No Alcohólico) --}}
         <div class="form-group">
     <label for="strAlcoholic">Tipo (Alcohólico/No Alcohólico)</label>
