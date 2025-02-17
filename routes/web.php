@@ -24,3 +24,5 @@ Auth::routes();
 // Ruta principal para la página de inicio
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
