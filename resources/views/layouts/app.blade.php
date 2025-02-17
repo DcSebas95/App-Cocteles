@@ -28,7 +28,7 @@
     }
     .navbar .navbar-brand,
     .navbar .nav-link {
-      color: white !important;
+      color: black;
     }
     /* Personaliza el texto de la marca */
     .navbar-brand .brand-text {

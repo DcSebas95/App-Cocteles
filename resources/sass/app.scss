@@ -8,10 +8,57 @@
 @import 'bootstrap/scss/bootstrap';
 
 body {
-  background-color: #1c1c1c; // fondo oscuro
+  background-color: #000; // fondo oscuro
   color: #d0d0d0; // texto en gris claro para contraste
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+/* ---- Contenedor Hero ---- */
+.hero-container {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+/* ---- Título con estilo de fondo semitransparente y color dorado ---- */
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFD700;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- Botones de acción ---- */
+.hero-buttons a {
+  width: 250px;
+  font-size: 1.2rem;
+  padding: 12px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+
+
 
 // Personalización de la barra de navegación (navbar)
 .navbar {
